@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  
+  namespace: vote-app
+  labels:
+    app:  
+spec:
+  selector:
+    matchLabels:
+      app: 
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app:  
+    spec:
+      containers:
+      - name:  
+        image:  marufhossainbd615/:latest                
+        
