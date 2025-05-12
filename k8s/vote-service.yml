@@ -1,19 +1,19 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: MYAPP
-  namespace: default
+  name: vote-service
+  namespace: vote-app
 spec:
   selector:
-    app: MYAPP
+    app: vote
   type: ClusterIP
   sessionAffinity: None
   sessionAffinityConfig:
     clientIP:
       timeoutSeconds: 10800
   ports:
-  - name: MYAPP
+  - name: vote
     protocol: TCP
-    port: 
-    targetPort: 
+    port: 5000
+    targetPort: 5000
     
