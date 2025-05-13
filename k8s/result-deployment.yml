@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: result
+  namespace: vote-app
+spec:
+  selector:
+    matchLabels:
+      app: result
+  template:
+    metadata:
+      labels:
+        app: result
+    spec:
+      containers:
+      - image: marufhossainbd615/result:latest
+        name: result  
+        ports:
+        - containerPort: 80 
+          name: result
+        
